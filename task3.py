@@ -12,13 +12,9 @@
 ===================================================
 """
 
-# Write your function here
 
-
-
-def main():
-    # Test your function here
-    pass
-
-if __name__ == "__main__":
-    main()
+def getSum(iterable):
+    if not iterable:
+        return 0  # End of recursion
+    else:
+        return iterable[0] + getSum(iterable[1:])  # Recursion step

@@ -23,6 +23,32 @@
 ===================================================
 """
 
+inp = input('Input the text you want to code:\n')
+inp = inp.lower()
+
+key = int(input('Input the key you want to use from 2 to 25:\n'))
+def rot13(input,key): #Function to code a text with caeser chyper.
+    if key > 25:
+        key = 25
+    elif key < 2:
+        key = 2
+    finaltext = ''
+    for letter in input:
+        if letter.isalpha():
+            num = ord(letter)
+            if (num + key) > 122: #If the final number is greater than 122..
+                x = (num + key) - 122
+                finaltext += chr(x + ord('a') - 1)
+            elif((num + key <= 122)):
+                finaltext += chr(num + key)
+        else:
+            finaltext += letter
+    print(finaltext)
+
+
+rot13(inp,key)
+
+
 # Write your functions here
 
 
